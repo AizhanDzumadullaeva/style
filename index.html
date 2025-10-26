@@ -71,7 +71,6 @@
       color: #f7d59c;
     }
 
-    /* 🌙 Анимация эффекті — ай мен күн */
     .moon, .sun {
       position: fixed;
       font-size: 26px;
@@ -103,6 +102,11 @@
     Visit My GitHub 💻
   </a>
 
+  <!-- 🎶 Музыка қосу батырмасы -->
+  <div>
+    <a class="btn" href="#" id="playMusicBtn">Play Music 💖</a>
+  </div>
+
   <section>
     <h2>About Me 🌸</h2>
     <p>Hi, I’m <strong>Aizhan</strong> — a passionate learner and creator.  
@@ -115,9 +119,26 @@
     </div>
   </section>
 
-<audio id="bgmusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_1a232f8f27.mp3?filename=calm-piano-melody-12447.mp3" type="audio/mpeg">
-</audio>
+  <!-- 🎵 Background Music -->
+  <audio id="bgmusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_1a232f8f27.mp3?filename=calm-piano-melody-12447.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const music = document.getElementById('bgmusic');
+    const btn = document.getElementById('playMusicBtn');
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (music.paused) {
+        music.play();
+        btn.textContent = "Pause Music 💫";
+      } else {
+        music.pause();
+        btn.textContent = "Play Music 💖";
+      }
+    });
+  </script>
 
 </body>
 </html>
