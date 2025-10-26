@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aizhan’s World</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #2c2c2c, #3b2f2f);
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 30px;
+      color: #d1a15b;
+      font-size: 28px;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 25px rgba(209,161,91,0.4);
+    }
+
+    .quote {
+      font-style: italic;
+      margin: 15px 0;
+      color: #e3cba8;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d1a15b;
+      color: #2c2c2c;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #c49747;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      color: #e3cba8;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      font-size: 28px;
+      text-decoration: none;
+      color: #e3cba8;
+      transition: transform 0.3s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #f7d59c;
+    }
+
+    /* 🌙 Анимация эффекті — ай мен күн */
+    .moon, .sun {
+      position: fixed;
+      font-size: 26px;
+      animation: float 5s ease-in-out infinite alternate;
+    }
+
+    .moon { top: 15px; left: 20px; }
+    .sun { bottom: 15px; right: 20px; }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="moon">🌙</div>
+  <div class="sun">☀️</div>
+
+  <h1>Welcome to Aizhan’s World 💫</h1>
+
+  <img src="Screenshot 2025-10-21 165321.png" alt="Aizhan photo">
+
+  <p style="margin-top:10px;">Dreamer • Creator • Believer ✨</p>
+
+  <p class="quote">"Be the reason someone smiles today." 🌷</p>
+
+  <a class="btn" href="https://github.com/AizhanDzhumadullaeva" target="_blank">
+    Visit My GitHub 💻
+  </a>
+
+  <section>
+    <h2>About Me 🌸</h2>
+    <p>Hi, I’m <strong>Aizhan</strong> — a passionate learner and creator.  
+    I love exploring web design, creativity, and everything that makes life brighter ✨</p>
+
+    <div class="socials">
+      <a href="https://t.me/yourusername" target="_blank">💬</a>
+      <a href="https://instagram.com/yourusername" target="_blank">📸</a>
+      <a href="mailto:your@email.com">💌</a>
+    </div>
+  </section>
+
+  <!-- 🎵 Background Music -->
+  <audio id="bgmusic" loop>
+    <source src="zhanbyr_jasyrady.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Музыка қолданушы экранға бірінші рет басқанда автоматты түрде қосылады
+    document.body.addEventListener('click', () => {
+      document.getElementById('bgmusic').play();
+    }, { once: true });
+  </script>
+
+</body>
+</html>
