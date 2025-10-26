@@ -116,16 +116,28 @@
   </section>
 
   <!-- 🎵 Background Music -->
-  <audio id="bgmusic" loop>
-    <source src="zhanbyr_jasyrady.mp3" type="audio/mpeg">
-  </audio>
+<audio id="bgmusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3b4f1e7a8b.mp3" type="audio/mpeg">
+</audio>
 
-  <script>
-    // Музыка қолданушы экранға бірінші рет басқанда автоматты түрде қосылады
-    document.body.addEventListener('click', () => {
-      document.getElementById('bgmusic').play();
-    }, { once: true });
-  </script>
+<!-- 🎶 Музыка қосу батырмасы -->
+<a class="btn" href="#" id="playMusicBtn">Play Music 💖</a>
+
+<script>
+  const music = document.getElementById('bgmusic');
+  const btn = document.getElementById('playMusicBtn');
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (music.paused) {
+      music.play();
+      btn.textContent = "Pause Music 💫";
+    } else {
+      music.pause();
+      btn.textContent = "Play Music 💖";
+    }
+  });
+</script>
 
 </body>
 </html>
