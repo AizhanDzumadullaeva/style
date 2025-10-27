@@ -130,17 +130,27 @@
     const music = document.getElementById('bgmusic');
     const btn = document.getElementById('playMusicBtn');
 
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (music.paused) {
-        music.play();
-        btn.textContent = "Pause Music 💫";
-      } else {
-        music.pause();
-        btn.textContent = "Play Music 💖";
-      }
-    });
-  </script>
+ <div class="gallery-item">
+    <img id="main-image" src="{{ asset('images/photo1.jpg') }}" alt="Сурет 1" style="max-width:400px; border-radius:12px;">
+</div>
+
+<!-- Батырма суретті ауыстыру үшін -->
+<button onclick="changeImage()">Next Image</button>
+
+<script>
+    let images = [
+        "{{ asset('images/photo1.jpg') }}",
+        "{{ asset('images/photo2.jpg') }}",
+        "{{ asset('images/photo3.jpg') }}"
+    ];
+    let currentIndex = 0;
+
+    function changeImage() {
+        currentIndex++;
+        if(currentIndex >= images.length) currentIndex = 0;
+        document.getElementById('main-image').src = images[currentIndex];
+    }
+</script>
 
 </body>
 </html>
