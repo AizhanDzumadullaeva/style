@@ -1,141 +1,62 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aizhan’s World</title>
-  <style>
-    body {
-      background: linear-gradient(to bottom, #2c2c2c, #3b2f2f);
-      color: #f5f5f5;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-    h1 {
-      margin-top: 30px;
-      color: #d1a15b;
-      font-size: 28px;
-    }
-
-    img {
-      width: 300px;
-      border-radius: 20px;
-      margin-top: 20px;
-      box-shadow: 0 0 25px rgba(209,161,91,0.4);
-    }
-
-    .quote {
-      font-style: italic;
-      margin: 15px 0;
-      color: #e3cba8;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #d1a15b;
-      color: #2c2c2c;
-      padding: 10px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #c49747;
-    }
-
-    section {
-      margin-top: 40px;
-    }
-
-    h2 {
-      color: #e3cba8;
-    }
-
-    .socials a {
-      margin: 0 10px;
-      font-size: 28px;
-      text-decoration: none;
-      color: #e3cba8;
-      transition: transform 0.3s;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-      color: #f7d59c;
-    }
-
-    .moon, .sun {
-      position: fixed;
-      font-size: 26px;
-      animation: float 5s ease-in-out infinite alternate;
-    }
-
-    .moon { top: 15px; left: 20px; }
-    .sun { bottom: 15px; right: 20px; }
-
-    @keyframes float {
-      from { transform: translateY(0px); }
-      to { transform: translateY(-10px); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Музыкалы Галерея</title>
+    <style>
+        body {
+            background-color: #f0e6f6;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #6a3f9f;
+            margin-bottom: 30px;
+        }
+        .gallery-item {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        img {
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #6a3f9f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8c5ac6;
+        }
+    </style>
 </head>
 <body>
-  <div class="moon">🌙</div>
-  <div class="sun">☀️</div>
 
-  <h1>Welcome to Aizhan’s World 💫</h1>
+<h1>Музыкалы Галерея 🎵</h1>
 
-  <img src="photo_2025-10-21_16-48-51.jpg" alt="Aizhan photo">
-
-  <p style="margin-top:10px;">Dreamer • Creator • Believer ✨</p>
-
-  <p class="quote">"Be the reason someone smiles today." 🌷</p>
-
-  <a class="btn" href="https://github.com/AizhanDzhumadullaeva" target="_blank">
-    Visit My GitHub 💻
-  </a>
-
-  <!-- 🎶 Музыка қосу батырмасы -->
-  <div>
-    <a class="btn" href="#" id="playMusicBtn">Play Music 💖</a>
-  </div>
-
-  <section>
-    <h2>About Me 🌸</h2>
-    <p>Hi, I’m <strong>Aizhan</strong> — a passionate learner and creator.  
-    I love exploring web design, creativity, and everything that makes life brighter ✨</p>
-
-    <div class="socials">
-      <a href="https://t.me/yourusername" target="_blank">💬</a>
-      <a href="https://instagram.com/yourusername" target="_blank">📸</a>
-      <a href="mailto:your@email.com">💌</a>
-    </div>
-  </section>
-
-  <!-- 🎵 Background Music -->
-  <audio id="bgmusic" loop>
-    <source src="calm-piano-melody-12447.mp3" type="audio/mpeg">
-  </audio>
-
-  <a class="btn" href="#" id="playMusicBtn">Play Music 💖</a>
-
-  <script>
-    const music = document.getElementById('bgmusic');
-    const btn = document.getElementById('playMusicBtn');
-
- <div class="gallery-item">
-    <img id="main-image" src="{{ asset('images/photo1.jpg') }}" alt="Сурет 1" style="max-width:400px; border-radius:12px;">
+<!-- Галерея суреті -->
+<div class="gallery-item">
+    <img id="main-image" src="{{ asset('images/photo1.jpg') }}" alt="Сурет 1">
 </div>
 
-<!-- Батырма суретті ауыстыру үшін -->
+<!-- Батырмалар -->
+<button onclick="document.getElementById('bg-music').play()">Play Music</button>
 <button onclick="changeImage()">Next Image</button>
+
+<!-- Музыка -->
+<audio id="bg-music" autoplay loop>
+    <source src="{{ asset('music/slow_music.mp3') }}" type="audio/mpeg">
+    Сіздің браузеріңіз аудионы қолдамайды.
+</audio>
 
 <script>
     let images = [
