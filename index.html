@@ -1,94 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <title>Музыкалы Галерея</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #f0e6f6, #d1c4e9);
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aizhan’s World</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #2c2c2c, #3b2f2f);
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
 
-        h1 {
-            color: #4a148c;
-            margin: 30px 0;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-        }
+    h1 {
+      margin-top: 30px;
+      color: #d1a15b;
+      font-size: 28px;
+    }
 
-        .gallery-item {
-            text-align: center;
-            margin-bottom: 30px;
-            transition: transform 0.3s;
-        }
+    img {
+      width: 300px;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 25px rgba(209,161,91,0.4);
+      transition: transform 0.3s;
+    }
 
-        .gallery-item img {
-            max-width: 400px;
-            border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-        }
+    img:hover {
+      transform: scale(1.05);
+    }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
+    .quote {
+      font-style: italic;
+      margin: 15px 0;
+      color: #e3cba8;
+    }
 
-        .button {
-            padding: 12px 24px;
-            margin: 10px;
-            background-color: #6a3f9f;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+    .btn, .next-btn {
+      display: inline-block;
+      background: #d1a15b;
+      color: #2c2c2c;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background 0.3s, transform 0.2s;
+      cursor: pointer;
+    }
 
-        .button:hover {
-            background-color: #8c5ac6;
-            transform: scale(1.05);
-        }
-    </style>
+    .btn:hover, .next-btn:hover {
+      background: #c49747;
+      transform: scale(1.05);
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      color: #e3cba8;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      font-size: 28px;
+      text-decoration: none;
+      color: #e3cba8;
+      transition: transform 0.3s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #f7d59c;
+    }
+
+    /* 🌙 Анимация эффекті — ай мен күн */
+    .moon, .sun {
+      position: fixed;
+      font-size: 26px;
+      animation: float 5s ease-in-out infinite alternate;
+    }
+
+    .moon { top: 15px; left: 20px; }
+    .sun { bottom: 15px; right: 20px; }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
 </head>
 <body>
+  <div class="moon">🌙</div>
+  <div class="sun">☀️</div>
 
-<h1>Музыкалы Галерея 🎵</h1>
+  <h1>Welcome to Aizhan’s World 💫</h1>
 
-<!-- Галерея суреті + Next Image батырмасы астында -->
-<div class="gallery-item">
-    <img id="main-image" src="{{ asset('images/photo1.jpg') }}" alt="Сурет 1">
+  <!-- Галерея суреті + Next Image батырмасы -->
+  <div>
+    <img id="main-image" src="photo_2025-10-21_16-48-51.jpg" alt="Aizhan photo">
     <br>
-    <button class="button" onclick="changeImage()">Next Image</button>
-</div>
+    <button class="next-btn" onclick="nextImage()">Next Image</button>
+  </div>
 
-<!-- Музыка батырмасы бөлек -->
-<button class="button" onclick="document.getElementById('bg-music').play()">Play Music</button>
+  <p style="margin-top:10px;">Dreamer • Creator • Believer ✨</p>
+  <p class="quote">"Be the reason someone smiles today." 🌷</p>
 
-<!-- Музыка -->
-<audio id="bg-music" autoplay loop>
-    <source src="{{ asset('music/slow_music.mp3') }}" type="audio/mpeg">
-</audio>
+  <a class="btn" href="https://github.com/AizhanDzhumadullaeva" target="_blank">
+    Visit My GitHub 💻
+  </a>
 
-<script>
-    let images = [
-        "{{ asset('images/photo1.jpg') }}",
-        "{{ asset('images/photo2.jpg') }}",
-        "{{ asset('images/photo3.jpg') }}"
+  <section>
+    <h2>About Me 🌸</h2>
+    <p>Hi, I’m <strong>Aizhan</strong> — a passionate learner and creator.  
+    I love exploring web design, creativity, and everything that makes life brighter ✨</p>
+
+    <div class="socials">
+      <a href="https://t.me/yourusername" target="_blank">💬</a>
+      <a href="https://instagram.com/yourusername" target="_blank">📸</a>
+      <a href="mailto:your@email.com">💌</a>
+    </div>
+  </section>
+
+  <!-- 🎵 Background Music -->
+  <audio id="bgmusic" loop>
+    <source src="zhanbyr_jasyrady.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Музыка қолданушы экранға бірінші рет басқанда автоматты түрде қосылады
+    document.body.addEventListener('click', () => {
+      document.getElementById('bgmusic').play();
+    }, { once: true });
+
+    // Суреттер массиві
+    const images = [
+      "photo_2025-10-21_16-48-51.jpg",
+      "photo2.jpg",
+      "photo3.jpg"
     ];
     let currentIndex = 0;
 
-    function changeImage() {
-        currentIndex++;
-        if(currentIndex >= images.length) currentIndex = 0;
-        document.getElementById('main-image').src = images[currentIndex];
+    function nextImage() {
+      currentIndex++;
+      if(currentIndex >= images.length) currentIndex = 0;
+      document.getElementById('main-image').src = images[currentIndex];
     }
-</script>
+  </script>
 
 </body>
 </html>
