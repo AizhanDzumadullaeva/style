@@ -25,7 +25,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        button {
+        .button {
             padding: 10px 20px;
             margin: 10px;
             background-color: #6a3f9f;
@@ -34,7 +34,7 @@
             border-radius: 8px;
             cursor: pointer;
         }
-        button:hover {
+        .button:hover {
             background-color: #8c5ac6;
         }
     </style>
@@ -43,14 +43,15 @@
 
 <h1>Музыкалы Галерея 🎵</h1>
 
-<!-- Галерея суреті -->
+<!-- Галерея суреті + Next Image батырмасы астында -->
 <div class="gallery-item">
     <img id="main-image" src="{{ asset('images/photo1.jpg') }}" alt="Сурет 1">
+    <br>
+    <button class="button" onclick="changeImage()">Next Image</button>
 </div>
 
-<!-- Батырмалар -->
-<button onclick="document.getElementById('bg-music').play()">Play Music</button>
-<button onclick="changeImage()">Next Image</button>
+<!-- Музыка батырмасы бөлек -->
+<button class="button" onclick="document.getElementById('bg-music').play()">Play Music</button>
 
 <!-- Музыка -->
 <audio id="bg-music" autoplay loop>
