@@ -5,37 +5,54 @@
     <title>Музыкалы Галерея</title>
     <style>
         body {
-            background-color: #f0e6f6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0e6f6, #d1c4e9);
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px;
+            min-height: 100vh;
         }
+
         h1 {
-            color: #6a3f9f;
-            margin-bottom: 30px;
+            color: #4a148c;
+            margin: 30px 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         }
+
         .gallery-item {
-            margin-bottom: 20px;
             text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
         }
-        img {
+
+        .gallery-item img {
             max-width: 400px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
         }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
         .button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             margin: 10px;
             background-color: #6a3f9f;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
         }
+
         .button:hover {
             background-color: #8c5ac6;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -56,7 +73,6 @@
 <!-- Музыка -->
 <audio id="bg-music" autoplay loop>
     <source src="{{ asset('music/slow_music.mp3') }}" type="audio/mpeg">
-    Сіздің браузеріңіз аудионы қолдамайды.
 </audio>
 
 <script>
